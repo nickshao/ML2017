@@ -93,7 +93,7 @@ def train():
     scalar = np.empty([5892,1], dtype=float)
     print('w',w)
     b = random.uniform(0,1)
-    lr = 1.5 #1.5
+    lr = 1 #1.5
     sumQ = np.empty([5892,1], dtype=float)
     iteration = 1000 #1000
     w_lr = np.zeros([12,], dtype=float)
