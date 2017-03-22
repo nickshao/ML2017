@@ -91,7 +91,7 @@ def train():
     fin = np.concatenate((final_data,fak_test), axis = 0)
     w = np.zeros([12,1], dtype=float)
     scalar = np.empty([5892,1], dtype=float)
-    print('w',w)
+    #print('w',w)
     b = random.uniform(0,1)
     lr = 1 #1.5
     sumQ = np.empty([5892,1], dtype=float)
@@ -102,7 +102,7 @@ def train():
     for i in range(iteration):
         b_grad = 0
         w_grad = np.zeros([12,], dtype=float)
-        print('iter:',i)
+        #print('iter:',i)
         scalar = 2.0*np.subtract(fin_y[0:5652],np.add(np.matmul(fin[0:5652],w),b))
         w_grad = np.multiply(np.sum(np.multiply(scalar,fin[0:5652]),axis=0),-1)
         b_grad = np.sum(np.multiply(scalar,-1))
@@ -113,7 +113,7 @@ def train():
         b = b - lr/np.sqrt(b_lr) * b_grad
         sumQ = np.sum(np.subtract(fin_y[5652:5892],np.add(np.matmul(fin[5652:5892],w),b))**2)
         sumQ = sumQ/240
-        print('RMSE:',math.sqrt(sumQ))
+        #print('RMSE:',math.sqrt(sumQ))
     return b,w
 
 def test():
