@@ -3,8 +3,6 @@ import numpy as np
 import csv
 from CFModel import CFModel
 from keras.callbacks import EarlyStopping, ModelCheckpoint
-from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt
 import argparse
 
 parser = argparse.ArgumentParser()
